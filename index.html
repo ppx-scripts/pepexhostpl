@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mój Serwer Minecraft</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #4e9a06 0%, #2e3436 100%);
+            font-family: 'Press Start 2P', cursive;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: rgba(34, 34, 34, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            padding: 32px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 16px;
+            color: #aaff00;
+            text-shadow: 2px 2px 0 #222;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 24px;
+        }
+        .ip-section {
+            margin: 32px 0;
+        }
+        .ip-address {
+            font-size: 1.3em;
+            background: #222;
+            padding: 10px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        button {
+            font-family: inherit;
+            font-size: 1em;
+            background: #aaff00;
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #8fd400;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mój Serwer Minecraft</h1>
+        <p>Dołącz do naszej społeczności! Oferujemy survival, eventy, ekonomię i świetną zabawę.<br>
+        Wersja: <strong>1.20+</strong></p>
+        <div class="ip-section">
+            <div class="ip-address" id="server-ip">mc.twojserwer.pl</div><br>
+            <button onclick="copyIP()">Kopiuj IP</button>
+        </div>
+        <footer>
+            &copy; 2024 Mój Serwer Minecraft. Wszelkie prawa zastrzeżone.
+        </footer>
+    </div>
+    <script>
+        function copyIP() {
+            const ip = document.getElementById('server-ip').innerText;
+            navigator.clipboard.writeText(ip).then(function() {
+                alert('Skopiowano IP serwera!');
+            }, function() {
+                alert('Nie udało się skopiować IP.');
+            });
+        }
+    </script>
+</body>
+</html>
